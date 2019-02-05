@@ -41,14 +41,21 @@ export class Detail extends Component{
 		const { Title, Poster, Actors, Metascore, Plot } = 
 		this.state.movie
 		return(
-			<div>
-				<ButtonBackToHome />
-				<h1> { Title }</h1>
-				<img src={Poster} />
-				<h3>{ Actors} </h3>
-				<span>{Metascore}</span>
-				<p>{Plot}</p>
+			<div className="card" >
+				<div className="card-image">
+					<img src={Poster} />
+				</div>
+				<div className="card-content">
+					<p className="title is-4"> { Title }</p>
+					<p className="subtitle is-6">{ Actors} </p>
+					<p className="subtitle is-8">{Metascore}/100</p>
+					<div className="content">
+						<p>{Plot}</p>
+					</div>
+					<ButtonBackToHome />
+				</div>
 			</div>
+
 		)
 	}
 }
